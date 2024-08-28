@@ -1,5 +1,13 @@
 # how to use
 * clone repo
+* create new conda env like so (you can name it what you like, I will call it 'vf23'):
+```
+conda create --name vf23 --file requirements.txt
+```
+* activate your new env like so:
+```
+conda activate vf23
+```  
 * run trait_creator in console like so:
 ```
   trait_creator.py [num drivers to create] [outputfilename]
