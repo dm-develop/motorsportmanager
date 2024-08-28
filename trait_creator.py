@@ -37,11 +37,11 @@ def assign_traits(
 def create_driver_trait_string() -> None:
     # roll number of traits to assign
     n_traits = random.sample(number_traits, 1)[0]
+    print(f"creating driver with {n_traits} traits ...")
     # draw rolled number of traits
     traits = []
     while len(traits) < n_traits:
         possible_trait = random.sample(draw_pool, 1)[0]
-        print(f"possible_trait: {possible_trait}")
         # if trait is not opposed to exising: add it
         if not get_opposing(possible_trait) in traits:
             traits.append(possible_trait)
@@ -68,7 +68,7 @@ def get_opposing(ID: int) -> int:
 # manual settings
 config_folder = "configs"
 input_name = "ids.csv"
-number_traits = [0, 1, 2, 3]
+number_traits = [0, 1, 2, 3]  # hardcoded for now, could be another config
 trait_config_file_path = os.path.join(config_folder, input_name)
 
 # read in config
@@ -96,6 +96,7 @@ def main():
     print(f"reading trait config from '{config_folder}/{input_name}' ...")
 
     assign_traits(n_drivers, outputfile)
+    print("done.")
     sys.exit(0)
 
 

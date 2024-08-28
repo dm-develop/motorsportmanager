@@ -1,0 +1,5 @@
+# Ignore csv files
+*.csv
+
+# exception to the csv rule for configs folder
+!configs/*.csv
