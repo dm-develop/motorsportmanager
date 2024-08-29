@@ -43,7 +43,9 @@ def create_driver_trait_string() -> None:
     while len(traits) < n_traits:
         possible_trait = random.sample(draw_pool, 1)[0]
         # if trait is not opposed to exising: add it
-        if not get_opposing(possible_trait) in traits:
+        if (not get_opposing(possible_trait) in traits) and (
+            not possible_trait in traits
+        ):
             traits.append(possible_trait)
     # create trait string
     trait_string = "; ".join(map(str, traits))
